@@ -1,0 +1,76 @@
+
+<div class="bo" style=" background-image:url(../../assets/john-morgan-VRQ7siT4U2U-unsplash.jpg); 
+background-size: 100%;">
+    <div class="container" style="height:100%;">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="click===false">
+        <strong>Invalid customer</strong>Try again
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+      </div>
+    <div class="row" style="text-align:center;height:100%;">
+<div class="col-lg-6 order-md-2 order-lg-1 order-sm-2 order-2 " style="color:white;align-items: center;
+display: grid;
+justify-content: center;">
+  <div class="" >
+    <div class="row">
+    <h1 class="mb-4">Library</h1>
+    </div>
+    <div class="row">
+    <h3 class="mb-4">Welcome to website !</h3>
+    <p style ="text-align: justify;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, aliquam aut ipsum nisi autem vel maxime aperiam facilis possimus ipsam beatae sapiente laboriosam corporis molestiae velit sint dicta iure libero.</p>
+</div>
+ </div>
+</div>
+
+<div class="col-lg-6 order-md-1 order-lg-2 order-sm-1 order-1 " style="align-items: center;
+display: flex;
+justify-content: center;">
+<div class="row">
+  <div class="login-box " style="width:100% ;padding:10px">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<h2>Login</h2>
+
+      <div class="user-box">
+        <input type="text" name="" formControlName="username" required="">
+        <label>Username</label>
+        <small class="text-danger" *ngIf="submitted && loginForm.controls.username.errors ">enter username</small>
+
+      </div>
+      <div class="user-box">
+        <input type="password" name="" formControlName="password" required="">
+        <label>Password</label>
+        <small class="text-danger" *ngIf="submitted && loginForm.controls.password.errors "> enter password</small>
+      </div>
+
+      <div class="user-box mb-3">
+         <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+         <small class="text-danger" *ngIf="submitted && loginForm.controls.recaptcha.errors"> Please Verify</small>
+      </div>
+      <button (click)="submit()">Login</button>
+    </form>
+  </div>
+  </div>
+</div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

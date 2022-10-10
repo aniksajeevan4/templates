@@ -1,0 +1,390 @@
+
+
+
+  <!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light ">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Brand</a>
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" mat-raised-button  matTooltip="Select Items">
+
+        <button mat-button [matMenuTriggerFor]="animals">Fashion</button>
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Men</button>
+  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Women</button>
+</mat-menu>
+
+<mat-menu #vertebrates="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="fish">Men's Top Wear</button>
+  <button mat-menu-item [matMenuTriggerFor]="amphibians">Men's Bottom Wear</button>
+  <button mat-menu-item [matMenuTriggerFor]="reptiles">Men's Foot Wear</button>
+  <button mat-menu-item>Watches/Glasses</button>
+  <button mat-menu-item>Essentials</button>
+</mat-menu>
+
+<mat-menu #invertebrates="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="top">Ethnic Wear</button>
+  <button mat-menu-item [matMenuTriggerFor]="Bottom">Ethnic Wear Bottom</button>
+  <button mat-menu-item [matMenuTriggerFor]="Foot">Womens's Foot Wear</button>
+  <button mat-menu-item>Watches/Glasses</button>
+  <button mat-menu-item>Essentials</button>
+
+</mat-menu>
+
+<mat-menu #fish="matMenu">
+  <button mat-menu-item>T-Shirts</button>
+  <button mat-menu-item>Casual Shirts</button>
+  <button mat-menu-item>Formal Shirts</button>
+</mat-menu>
+
+<mat-menu #amphibians="matMenu">
+  <button mat-menu-item>Jeans</button>
+  <button mat-menu-item>Trousers</button>
+  <button mat-menu-item>Shorts</button>
+  <button mat-menu-item>Cargos</button>
+  <button mat-menu-item>Track Pants</button>
+</mat-menu>
+
+<mat-menu #reptiles="matMenu">
+  <button mat-menu-item>Casual Shoes</button>
+  <button mat-menu-item>Formal Shoes</button>
+  <button mat-menu-item>Flip-Flops</button>
+  <button mat-menu-item>Slippers</button>
+  <button mat-menu-item disabled>Sandals</button>
+</mat-menu>
+
+
+<mat-menu #top="matMenu">
+  <button mat-menu-item>Sarees</button>
+  <button mat-menu-item>Kurtas & kurtis</button>
+  <button mat-menu-item>Blous</button>
+  <button mat-menu-item>Gown</button>
+  <button mat-menu-item>Dupattas</button>
+</mat-menu>
+
+<mat-menu #Bottom="matMenu">
+  <button mat-menu-item>Leggins & churidhars</button>
+  <button mat-menu-item>Dhoti Pants</button>
+  <button mat-menu-item>Ethnic Trousers</button>
+  <button mat-menu-item>Palazzos</button>
+  <button mat-menu-item>Salwars</button>
+</mat-menu>
+
+<mat-menu #Foot="matMenu">
+  <button mat-menu-item>Flats</button>
+  <button mat-menu-item>Heels</button>
+  <button mat-menu-item>Shoes</button>
+  <button mat-menu-item>Slippers</button>
+  <button mat-menu-item disabled>Sandals</button>
+  <button mat-menu-item >Boots</button>
+</mat-menu>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#">Action</a>
+            </li>
+            <li >
+              <a class="dropdown-item disabled" href="#">Another action</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+
+      <!-- Icons -->
+      <ul class="navbar-nav d-flex flex-row mx-4">
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="#"><i class="fas fa-shopping-cart" mat-raised-button  matTooltip="View Messages"><span class="badge rounded-pill badge-notification bg-danger">999+</span></i></a>
+        </li>
+       
+      </ul>
+
+    </div>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+
+
+<div class="spinner-grow d-flex justify-content-center" style="margin-top: 250px; margin-left: 50%;" *ngIf="loader">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+
+<div *ngIf="!loader">
+  
+  <!-- breadcrumb -->
+  <nav aria-label="breadcrumb" class="mx-5" style="margin-top:60px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+  
+  
+  
+  <!-- thumbnail -->
+   <div class="row m-4">
+  <div class="col-4">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
+        class="img-thumbnail"
+        alt="Hollywood Sign on The Hill"
+      />
+  </div>
+  <div class="col-4">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
+      class="img-thumbnail"
+      alt="Hollywood Sign on The Hill"
+    />
+  </div>
+  <div class="col-4">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
+      class="img-thumbnail"
+      alt="Hollywood Sign on The Hill"
+    />
+  </div>
+  </div> 
+  
+  
+  <!-- accordion -->
+  <div class="accordion accordion-flush mx-5 pb-2" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne" mat-raised-button  matTooltip="View Details">
+        <button 
+          class="accordion-button collapsed"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#flush-collapseOne"
+          aria-expanded="false"
+          aria-controls="flush-collapseOne"
+        >
+          Details
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven' heard of them accusamus labore sustainable VHS.
+        </div>
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree" mat-raised-button  matTooltip="View Personal Details">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#flush-collapseThree"
+          aria-expanded="false"
+          aria-controls="flush-collapseThree"
+        >
+        Personal Details
+        </button>
+      </h2>
+      <div
+        id="flush-collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingThree"
+        data-mdb-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+          <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Company (disabled)</mat-label>
+              <input matInput disabled value="Google">
+            </mat-form-field>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>First name</mat-label>
+                <input matInput>
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput>
+              </mat-form-field></td>
+            </tr></table>
+          
+            <p>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Address 2</mat-label>
+                <textarea matInput></textarea>
+              </mat-form-field>
+            </p>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="Ex. San Francisco">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>State</mat-label>
+                <input matInput placeholder="Ex. California">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Postal Code</mat-label>
+                <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              </mat-form-field></td>
+            </tr></table>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+<!-- 
+
+<div class="row mb-4">
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image2" alt="Card image cap">
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image3" alt="Card image cap">     
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image1" alt="Card image cap">
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image4" alt="Card image cap">
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image4" alt="Card image cap">
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 pb-2">
+<div class="card" >
+<img class="card-img-top" [lazyLoad]="image4" alt="Card image cap">
+</div>
+</div>
+
+
+  
+</div> -->
+
+
+  
+  
+  
+  <mat-stepper orientation="vertical" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
+  
+  
+  <!-- 21:9 aspect ratio -->
+  <div class="m-5">
+     <div style="height: 400px;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/p9ScsROLjdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div> 
+  </div>
+  
+  
+
+  
+  <div class="m-5">
+    <mat-progress-bar mode="determinate" value="40" class="m-5"></mat-progress-bar>
+  </div>
+  
+  <mat-slider aria-label="unit(s)"></mat-slider>
+
+
+
+<div class="mx-5">
+      <div class="col-4 my-2">
+        <img height="300" width="100%" [lazyLoad]="image1">
+      </div>
+      <div class="col-4 my-2">
+        <img height="300" width="100%"  [lazyLoad]="image2">
+      </div>
+      <div class="col-4 my-2">
+        <img height="300" width="100%"  [lazyLoad]="image3">
+      </div>
+</div> 
+
+
+</div>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ihnrJkq3CXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
